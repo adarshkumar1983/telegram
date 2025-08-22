@@ -58,7 +58,7 @@ bot.onText( /\/start/, async (msg) => {
         if (!user) {
             user = new User({ chatId });
             await user.save();
-            bot.sendMessage(chatId, 'Welcome! I will send you a random joke every minute. You can use /disable to stop receiving jokes.');
+            bot.sendMessage(chatId, 'Welcome! I will send you a random joke every minute. You can use /disable to stop receiving jokes, or /setfrequency <minutes> to change how often you receive them.');
             sendJoke(chatId);
         } else {
             bot.sendMessage(chatId, 'You are already subscribed for jokes.');
